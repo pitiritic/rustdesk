@@ -5,8 +5,8 @@ services:
     image: rustdesk/rustdesk-server:latest
     container_name: rustdesk-server
     environment:
-      - SIGNALING_SERVER=your-server-ip
-      - RELAY_SERVER=your-server-ip
+      - SIGNALING_SERVER=ip-servidor
+      - RELAY_SERVER=ip-servidor
     ports:
       - "21112:21112"  # Puerto para Signaling Server
       - "21113:21113"  # Puerto para Relay Server
