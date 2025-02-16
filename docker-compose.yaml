@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  rustdesk-server:
+    image: rustdesk/rustdesk-server:latest
+    container_name: rustdesk-server
+    environment:
+      - SIGNALING_SERVER=your-server-ip
+      - RELAY_SERVER=your-server-ip
+    ports:
+      - "21112:21112"  # Puerto para Signaling Server
+      - "21113:21113"  # Puerto para Relay Server
+    restart: always
+    networks:
+      - rustdesk-net
+
+networks:
+  rustdesk-net:
+    driver: bridge
